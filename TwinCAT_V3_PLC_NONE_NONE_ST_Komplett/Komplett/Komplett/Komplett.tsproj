@@ -2988,6 +2988,20 @@ External Setpoint Generation:
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>dSub.AI_0</Name>
+							<Comment>
+								<![CDATA[ Analogeingang 0]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.AI_1</Name>
+							<Comment>
+								<![CDATA[ Analogeingang 1]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
@@ -3158,6 +3172,13 @@ External Setpoint Generation:
 								<![CDATA[ Meldeleuchte grün]]>
 							</Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>dSub.AQ_0</Name>
+							<Comment>
+								<![CDATA[ Analogausgang 0]]>
+							</Comment>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
@@ -5728,10 +5749,13 @@ Bit 8 - 15 : reserved]]>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 6 (EL3064)">
 				<Link VarA="PlcTask Inputs^AN.AI_1" VarB="AI Standard Channel 3^Value"/>
 				<Link VarA="PlcTask Inputs^AN.AI_2" VarB="AI Standard Channel 4^Value"/>
+				<Link VarA="PlcTask Inputs^dSub.AI_0" VarB="AI Standard Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^dSub.AI_1" VarB="AI Standard Channel 2^Value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EL4034)">
 				<Link VarA="PlcTask Outputs^AN.AQ_1" VarB="AO Outputs Channel 3^Analog output"/>
 				<Link VarA="PlcTask Outputs^AN.AQ_2" VarB="AO Outputs Channel 4^Analog output"/>
+				<Link VarA="PlcTask Outputs^dSub.AQ_0" VarB="AO Outputs Channel 1^Analog output"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

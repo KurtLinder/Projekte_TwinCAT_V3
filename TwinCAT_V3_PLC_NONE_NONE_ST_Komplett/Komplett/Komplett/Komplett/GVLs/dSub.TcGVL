@@ -30,7 +30,12 @@ VAR_GLOBAL
 	S10 AT %I*: BOOL;
 	// Taster Not Halt (Schliesser)
 	S11 AT %I*: BOOL;
-
+	
+	// Analogeingang 0
+	AI_0 AT %I*: INT;
+	// Analogeingang 1
+	AI_1 AT %I*: INT;	
+	
 	// Linearantrieb Rechtslauf
 	Q1 AT %Q*: BOOL;
 	// Linearantrieb Linkslauf
@@ -44,6 +49,9 @@ VAR_GLOBAL
 	// Meldeleuchte grün
 	P4 AT %Q*: BOOL;
 
+	// Analogausgang 0
+	AQ_0 AT %Q*: INT;
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
