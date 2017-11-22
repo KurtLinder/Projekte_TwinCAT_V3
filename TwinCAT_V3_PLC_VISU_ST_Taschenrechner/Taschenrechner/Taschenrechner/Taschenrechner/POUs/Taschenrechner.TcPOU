@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <POU Name="Taschenrechner" Id="{cb65ceda-4bf1-470d-b57d-3c08e6479214}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Taschenrechner
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Befehl: int;
+	usi_Zahl_1: usint;
+	usi_Zahl_2: usint;
+	usi_Ergebnis: usint;
+	si_Zahl_1: sint;
+	si_Zahl_2: sint;
+	si_Ergebnis: sint;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+CASE  Befehl OF
+	1: // zwei unsigned short int addieren
+	usi_Ergebnis := usi_Zahl_1 + usi_Zahl_2;
+	
+	2: // zwei signed short int addieren
+	si_Ergebnis := si_Zahl_1 + si_Zahl_2;
+	
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="Taschenrechner">
+      <LineId Id="348" Count="7" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
