@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <title>Projekt</title>
+      <style>
+         h1 {
+         font-family: arial, sans-serif;
+         text-align: center;
+         padding: 1em;
+         border: 3px solid black;
+         background-color: #E0E0E0;
+         display: inline-block;
+         }
+         .text_schwarz {
+         font-family: arial, sans-serif;
+         font-size: 12pt;
+         font-weight: normal;
+         color: black;
+         }
+		.di {
+		 background-color: rgb(243, 247, 129);
+		 width: 50px;
+		 }
+		.dq {
+		 background-color: rgb(169, 245, 225);
+		 width: 80px;
+		}
+      </style>
+   </head>
+   <body>
+      <h1>Festo MPS Station Verteiler</h1>
+	  <img width="400px" src="https://www.linderonline.at/medien/image/lbs/lau/sps/festo_mps_station_verteilen.png" /> 
+      <br><br>
+      <span class="text_schwarz">
+         <table border="1" cellpadding="5">
+            <tr class="variablentabelle">
+               <td>SPS				</td>
+               <td>Variable			</td>
+               <td>Beschreibung		</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.0 								</td>
+               <td>DIO.B1								</td>
+               <td>Ausschiebezylinder eingefahren		</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.1 								</td>
+               <td>DIO.B2								</td>
+               <td>Ausschiebezylinder ausgefahren		</td>
+            </tr>			
+            <tr class="di">
+               <td>DI0.2								</td>
+               <td>DIO.B3								</td>
+               <td>Vakuumzylinder Werkstück angesaugt	</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.3 								</td>
+               <td>DIO.B4								</td>
+               <td>Schwenkzylinder Position Magazin		</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.4 								</td>
+               <td>DIO.B5								</td>
+               <td>Schwenkzylinder Position Folgestation</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.5 								</td>
+               <td>DIO.B6								</td>
+               <td>Magazin leer							</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.6 								</td>
+               <td>DIO.B7								</td>
+               <td>Folgestation leer					</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.7 								</td>
+               <td>DIO.S1								</td>
+               <td>Bedienfeld Taster "Start"			</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.8 								</td>
+               <td>DIO.S2								</td>
+               <td>Bedienfeld Taster "Stop"				</td>
+            </tr>			
+            <tr class="di">
+               <td>DI0.9 								</td>
+               <td>DIO.S3								</td>
+               <td>Bedienfeld Schalter "Auto/Man"		</td>
+            </tr>
+            <tr class="di">
+               <td>DI0.10 								</td>
+               <td>DIO.S4								</td>
+               <td>Bedienfeld Taster "Reset"			</td>
+            </tr>
+			
+			
+			
+            <tr class="dq">
+               <td>DQ0.0 									</td>
+               <td>DIO.Y1_1									</td>
+               <td>Ausschiebezylinder Werkstück ausfahren	</td>
+            </tr>
+            <tr class="dq">
+               <td>DQ0.1 									</td>
+               <td>DIO.Y2_1									</td>
+               <td>Vakuum									</td>
+            </tr>         
+            <tr class="dq">
+               <td>DQ0.2 									</td>
+               <td>DIO.Y2_2									</td>
+               <td>Ausstoßimpuls							</td>
+            </tr> 		 
+            <tr class="dq">
+               <td>DQ0.3 									</td>
+               <td>DIO.Y3_1									</td>
+               <td>Schwenkzylinder Richtung Magazin			</td>
+            </tr> 		 
+            <tr class="dq">
+               <td>DQ0.4 									</td>
+               <td>DIO.Y3_2									</td>
+               <td>Schwenkzylinder Richtung Folgestation	</td>
+            </tr> 		 
+            <tr class="dq">
+               <td>DQ0.5 									</td>
+               <td>DIO.P1									</td>
+               <td>LED Bedienfeld "Start"					</td>
+            </tr> 		 
+            <tr class="dq">
+               <td>DQ0.6 									</td>
+               <td>DIO.P2									</td>
+               <td>LED Bedienfeld "Reset"					</td>
+            </tr> 		 
+            <tr class="dq">
+               <td>DQ0.7 									</td>
+               <td>DIO.P3									</td>
+               <td>LED Bedienfeld "Q1"						</td>
+            </tr> 		 
+		 
+         </table>
+      </span>
+      <br><br>
+   </body>
+</html>

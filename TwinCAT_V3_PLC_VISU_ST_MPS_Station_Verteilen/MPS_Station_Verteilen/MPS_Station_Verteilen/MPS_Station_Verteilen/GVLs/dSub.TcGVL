@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <GVL Name="dSub" Id="{7948aa29-e1c8-4c93-94b5-310d9886c537}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	// Ausschiebezylinder eingefahren
+	B1 AT %I*: BOOL; 
+	// Ausschiebezylinder ausgefahren
+	B2 AT %I*: BOOL;
+	// Vakuumzylinder Werkstück angesaugt
+	B3 AT %I*: BOOL;	
+	// Schwenkzylinder Position Magazin
+	B4 AT %I*: BOOL;
+	// Schwenkzylinder Position Folgestation
+	B5 AT %I*: BOOL;
+	// Magazin leer
+	B6 AT %I*: BOOL;
+	// Folgestation leer
+	B7 AT %I*: BOOL;
+	// Bedienfeld "Start"
+	S1 AT %I*: BOOL;
+	// Bedienfeld "Stop"
+	S2 AT %I*: BOOL;
+	// Bedienfeld "Hand-Automatik"
+	S3 AT %I*: BOOL;
+	// Bedienfeld "Reset"
+	S4 AT %I*: BOOL;
+
+	// Ausschiebezylinder Werkstück ausfahren
+	Y1_1 AT %Q*: BOOL;
+	// Vakuum
+	Y2_1 AT %Q*: BOOL;
+	// Ausstoßimpuls
+	Y2_2 AT %Q*: BOOL;
+	// Schenkzylinder Richtung Magazin
+	Y3_1 AT %Q*: BOOL;
+	// Schwenkzylinder Richtung Folgestation
+	Y3_2 AT %Q*: BOOL;
+	// LED Bedienfeld "Start"
+	P1 AT %Q*: BOOL;
+	// LED Bedienfeld "Reset"
+	P2 AT %Q*: BOOL;
+	// LED Bedienfeld "Q1"
+	P3 AT %Q*: BOOL;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
