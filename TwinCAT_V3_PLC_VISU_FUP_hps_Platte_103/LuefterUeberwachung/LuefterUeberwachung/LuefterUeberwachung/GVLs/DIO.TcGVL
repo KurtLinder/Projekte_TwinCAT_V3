@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <GVL Name="DIO" Id="{65ef94e3-565d-43bf-a3ca-764f5a8087a4}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Ampel rot
+	P1 AT %Q*: BOOL; 
+	// Ampel gelb
+	P2 AT %Q*: BOOL; 	
+	// Ampfel grün
+	P3 AT %Q*: BOOL; 	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

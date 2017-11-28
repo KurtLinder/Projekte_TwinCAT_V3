@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <GVL Name="VISU" Id="{0a620ef9-09d2-41c1-b391-623952bc6bca}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Lüfter 1
+	Luefter_1 : BOOL; 
+	// Lüfter 1
+	Luefter_2 : BOOL; 
+	// Lüfter 1
+	Luefter_3 : BOOL; 
+	// Lüfter 1
+	Luefter_4 : BOOL; 	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
