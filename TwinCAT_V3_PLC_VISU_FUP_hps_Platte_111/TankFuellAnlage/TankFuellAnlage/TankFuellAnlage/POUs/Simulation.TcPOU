@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <POU Name="Simulation" Id="{54576aa1-06f6-4b89-ab1a-39131b41e0cb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Simulation
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	tonTaktgeber: ton;	
+
+	xAuslass1: BOOL;	//Es wird Wasser abgelassen
+	xAuslass2: BOOL;
+	xAuslass3: BOOL;
+
+	uiFuellstandTank1: UINT;	// 0 --> voll; 300 --> leer
+	uiFuellstandTank2: UINT;
+	uiFuellstandTank3: UINT;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Simulation für die Visualisierung
+tonTaktgeber(IN:= NOT tonTaktgeber.Q, PT:= T#50MS);
+
+IF tonTaktgeber.Q THEN
+// damit das Simulation mit passabler Geschwindigkeit läuft	
+
+	IF  xAuslass1 AND uiFuellstandTank1 < 300 THEN
+		uiFuellstandTank1 := uiFuellstandTank1 + 1;
+	END_IF
+	
+	IF DIO.Q1 AND uiFuellstandTank1 > 2 THEN
+			uiFuellstandTank1 := uiFuellstandTank1 - 2;
+	END_IF
+	
+	IF uiFuellstandTank1 = 300 THEN
+		VISU.B1 := TRUE;
+	ELSE
+		VISU.B1 := FALSE;
+	END_IF
+	
+	IF uiFuellstandTank1 = 0 THEN
+		VISU.B2 := TRUE;
+	ELSE
+		VISU.B2 := FALSE;
+	END_IF
+
+
+	
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="Simulation">
+      <LineId Id="9" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="37" Count="1" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="60" Count="3" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="47" Count="1" />
+      <LineId Id="50" Count="1" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="32" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

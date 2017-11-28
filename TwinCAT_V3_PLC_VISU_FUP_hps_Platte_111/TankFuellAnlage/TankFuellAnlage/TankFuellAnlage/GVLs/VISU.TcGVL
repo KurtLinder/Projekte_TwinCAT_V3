@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <GVL Name="VISU" Id="{0a620ef9-09d2-41c1-b391-623952bc6bca}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Schwimmerschalter Tank 1 - Leer
+	B1 : BOOL; 
+	// Schwimmerschalter Tank 1 - Voll
+	B2 : BOOL; 
+	// Schwimmerschalter Tank 2 - Leer
+	B3 : BOOL; 
+	// Schwimmerschalter Tank 2 - Voll
+	B4 : BOOL; 
+	// Schwimmerschalter Tank 3 - Leer
+	B5 : BOOL; 
+	// Schwimmerschalter Tank 3 - Voll
+	B6 : BOOL; 	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

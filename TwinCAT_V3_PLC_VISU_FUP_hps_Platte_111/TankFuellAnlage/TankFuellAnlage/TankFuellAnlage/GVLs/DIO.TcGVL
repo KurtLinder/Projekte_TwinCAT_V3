@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <GVL Name="DIO" Id="{65ef94e3-565d-43bf-a3ca-764f5a8087a4}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Ventil für Tank 1
+	Q1 AT %Q*: BOOL; 
+	// Ventil für Tank 2
+	Q2 AT %Q*: BOOL; 	
+	// Ventil für Tank 3
+	Q3 AT %Q*: BOOL; 	
+	// Meldeleuchte Störung
+	P1 AT %Q*: BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
