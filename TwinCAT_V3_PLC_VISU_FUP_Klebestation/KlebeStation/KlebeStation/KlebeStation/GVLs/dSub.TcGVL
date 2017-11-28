@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+  <GVL Name="dSub" Id="{7948aa29-e1c8-4c93-94b5-310d9886c537}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	// Taster Aus, rot (E1.0)
+	S1 AT %I*: BOOL; 
+	// Taster Ein links, grün (E1.1)
+	S2 AT %I*: BOOL;
+	// Taster Ein rechts, grün (E1.2)
+	S3 AT %I*: BOOL;	
+	// Endschalter Deckel (E1.3)
+	S4 AT %I*: BOOL;
+	// Zylinder Z2, Endlage vorne (E1.4)
+	B1 AT %I*: BOOL;
+	// Zylinder Z2, Endlage hinten (E1.5)
+	B2 AT %I*: BOOL;
+	// Zylinder Z1, Endlage vorne (E1.6)
+	B3 AT %I*: BOOL; 
+	
+	// Leuchtmelder rot im Taster -S1 (A5.0)
+	P1 AT %Q*: BOOL;
+	// Leuchtmelder grün im Taster -S2 (A5.1)
+	P2 AT %Q*: BOOL;
+	// Leuchtmelder grün im Taster -S3 (A5.2)
+	P3 AT %Q*: BOOL;
+	// 3/2-Wegeventil Zylinder Z1, Spule (A5.3)
+	Y1 AT %Q*: BOOL;
+	// 5/3-Wegeventil Zylinder Z2 ausfahren, Spule (A5.4)
+	Y2 AT %Q*: BOOL;
+	// 5/3-Wegeventil Zylinder Z2 einfahren, Spule (A5.5)
+	Y3 AT %Q*: BOOL;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
