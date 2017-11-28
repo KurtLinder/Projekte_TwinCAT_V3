@@ -30,7 +30,7 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\LueferUeberwachung.TcPOU">
+    <Compile Include="POUs\LuefterUeberwachung.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">

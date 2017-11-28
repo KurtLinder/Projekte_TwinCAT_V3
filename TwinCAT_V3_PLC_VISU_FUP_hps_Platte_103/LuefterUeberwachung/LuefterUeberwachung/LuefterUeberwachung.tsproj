@@ -2766,7 +2766,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{6E2725C0-ACAD-4E3B-B802-4FDDB7FFCDDD}" Name="LuefterUeberwachung" PrjFilePath="LuefterUeberwachung\LuefterUeberwachung.plcproj" TmcFilePath="LuefterUeberwachung\LuefterUeberwachung.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Komplett\Komplett.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LuefterUeberwachung\LuefterUeberwachung.tmc">
 					<Name>LuefterUeberwachung Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2">
