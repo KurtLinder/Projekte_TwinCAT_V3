@@ -1,0 +1,392 @@
+﻿<!doctype html>
+<html lang="de">
+   <head>
+      <meta charset="utf-8">
+      <title>Projekt</title>
+      <style>
+         h1 {
+         font-family: arial, sans-serif;
+         text-align: center;
+         padding: 1em;
+         border: 3px solid black;
+         background-color: #E0E0E0;
+         display: inline-block;
+         }
+         .text_schwarz {
+         font-family: arial, sans-serif;
+         font-size: 12pt;
+         font-weight: normal;
+         color: black;
+         }
+		.di {
+		 background-color: rgb(243, 247, 129);
+		 width: 50px;
+		 }
+		.dq {
+		 background-color: rgb(169, 245, 225);
+		 width: 80px;
+		}
+		.ai {
+		 background-color: rgb(201, 42, 172);
+		 width: 50px;
+		 }
+		.aq {
+		 background-color: rgb(42, 201, 201);
+		 width: 80px;
+		}
+      </style>
+   </head>
+   <body>
+      <h1>Beckhoff SPS + Linearachse (FUP)  </h1>
+	  <img width="400px" src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/platte_linearantrieb.jpg" /> 
+      <br><br>
+      <span class="text_schwarz">
+         <table border="1" cellpadding="5">
+            <tr class="variablentabelle">
+               <td>SPS					</td>
+               <td>Bezeichnung			</td>
+               <td colspan="2">Kommentar</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :1 							</td>
+               <td>dSub.B1								</td>
+               <td>Linearantrieb Endlage links → Öffner	</td>
+               <td rowspan="2"> &nbsp; 					</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :2 								</td>
+               <td>dSub.B2									</td>
+               <td>Linearantrieb Endlage rechts → Öffner	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :4 				</td>
+               <td>dSub.S1					</td>
+               <td>Taster (❶) → Schliesser	</td>
+               <td rowspan="3"> <img width="50px"   src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/taster_i_0.jpg" /> 
+               </td>
+            </tr>
+            <tr class="dq">
+               <td>-dSub :18 							</td>
+               <td>dSub.P1								</td>
+               <td>Meldeleuchte im Taster S1/S2 (weiß)	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :3					</td>
+               <td>dSub.S2					</td>
+               <td>Taster (⓿) → Öffner		</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :6 				</td>
+               <td>dSub.S3					</td>
+               <td>Taster (Ⅰ) → Schliesser	</td>
+               <td rowspan="3"> <img width="50px"   src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/taster_i_stop_ii.jpg" />
+               </td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :11				</td>
+               <td>dSub.S9					</td>
+               <td>Taster (STOP) → Öffner	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :5 				</td>
+               <td>dSub.S4					</td>
+               <td>Taster (Ⅱ) → Schliesser	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :8 				</td>
+               <td>dSub.S5					</td>
+               <td>Taster (↑) → Schliesser	</td>
+               <td rowspan="3"><img width="50px"   src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/taster_auf_stop_ab.jpg" />
+               </td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :11 				</td>
+               <td>dSub.S9					</td>
+               <td>Taster (STOP) → Öffner	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :7					</td>
+               <td>dSub.S6					</td>
+               <td>Taster (↓) → Schliesser	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :10				</td>
+               <td>dSub.S7					</td>
+               <td>Taster (+) → Schliesser	</td>
+               <td rowspan="3"> <img width="50px"   src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/taster_plus_stop_minus.jpg" />
+               </td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :11 				</td>
+               <td>dSub.S9					</td>
+               <td>Taster (STOP) → Öffner	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :9					</td>
+               <td>dSub.S8					</td>
+               <td>Taster (-) → Schliesser	</td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :12				</td>
+               <td>dSub.S10					</td>
+               <td>Not-Halt → Öffner		</td>
+               <td rowspan="2"> <img width="50px" alt="-" src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/Not_Halt.JPG" />
+               </td>
+            </tr>
+            <tr class="di">
+               <td>-dSub :13				</td>
+               <td>dSub.S11					</td>
+               <td>Not-Halt → Schliesser	</td>
+            </tr>
+            <tr class="dq">
+               <td>-dSub :17				</td>
+               <td>dSub.Q1					</td>
+               <td>Linearantrieb Rechtslauf</td>
+               <td rowspan="2"> &nbsp; 		</td>
+            </tr>
+            <tr class="dq">
+               <td>-dSub :18 				</td>
+               <td>dSub.Q2					</td>
+               <td>Linearantrieb Linkslauf	</td>
+            </tr>
+            <tr class="dq">
+               <td>-dSub :19 				</td>
+               <td>dSub.P2					</td>
+               <td>Meldeleuchte weiß		</td>
+               <td> &nbsp; 					</td>
+            </tr>
+            <tr class="dq">
+               <td>-dSub :20 				</td>
+               <td>dSub.P3					</td>
+               <td>Meldeleuchte rot			</td>
+               <td> &nbsp; 					</td>
+            </tr>
+            <tr class="dq">
+               <td>-dSub :21				</td>
+               <td>dSub.P4					</td>
+               <td>Meldeleuchte grün		</td>
+               <td> &nbsp; 					</td>
+            </tr>
+            <tr class="ai">
+               <td>-dSub :14				</td>
+               <td>dSub.AI_0				</td>
+               <td>Analogeingang 0 (0..10V)	</td>
+               <td> &nbsp; 					</td>
+            </tr>
+            <tr class="ai">
+               <td>-dSub :15				</td>
+               <td>dSub.AI_1				</td>
+               <td>Analogeingang 1 (0..10V)	</td>
+               <td> &nbsp; 					</td>
+            </tr>
+            <tr class="aq">
+               <td>-dSub :24 				</td>
+               <td>dSub.AQ_0				</td>
+               <td>Analogausgang 0 (0..10V)	</td>
+               <td> &nbsp; 					</td>
+            </tr>
+         </table>
+      </span>
+      <br><br>
+   
+	<img width="600px" src="https://www.linderonline.at/medien/image/lbs/lau/beckhoff_cx9020/Beckhoff CX9020.jpg" />
+   
+   
+	<br><br>
+    <span class="text_schwarz">
+         <table border="1" cellpadding="5">
+            <tr class="variablentabelle">
+               <td>SPS				</td>
+               <td>Bezeichnung		</td>
+               <td>Kommentar		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI1					</td>
+               <td>DIO.DI_1					</td>
+               <td>Digitaler Eingang 24V DC	</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI2		</td>
+               <td>DIO.DI_2		</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="di">
+               <td>-X1: DI3		</td>
+               <td>DIO.DI_3		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI4		</td>
+               <td>DIO.DI_4		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI5		</td>
+               <td>DIO.DI_5		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI6		</td>
+               <td>DIO.DI_6		</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="di">
+               <td>-X1: DI7		</td>
+               <td>DIO.DI_7		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI8		</td>
+               <td>DIO.DI_8		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI9		</td>
+               <td>DIO.DI_9		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI10	</td>
+               <td>DIO.DI_10	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="di">
+               <td>-X1: DI11	</td>
+               <td>DIO.DI_11	</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI12	</td>
+               <td>DIO.DI_12	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="di">
+               <td>-X1: DI13	</td>
+               <td>DIO.DI_13	</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI14	</td>
+               <td>DIO.DI_14	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="di">
+               <td>-X1: DI15	</td>
+               <td>DIO.DI_15	</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="di">
+               <td>-X1: DI16	</td>
+               <td>DIO.DI_16	</td>
+               <td>&nbsp;		</td>
+            </tr>
+
+			
+            <tr class="dq">
+               <td>-X1: DQ1					</td>
+               <td>DIO.DQ_1					</td>
+               <td>Digitaler Ausgang 24V DC	</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ2		</td>
+               <td>DIO.DQ_2		</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="dq">
+               <td>-X1: DQ3		</td>
+               <td>DIO.DQ_3		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ4		</td>
+               <td>DIO.DQ_4		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ5		</td>
+               <td>DIO.DQ_5		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ6		</td>
+               <td>DIO.DQ_6		</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="dq">
+               <td>-X1: DQ7		</td>
+               <td>DIO.DQ_7		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ8		</td>
+               <td>DIO.DQ_8		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ9		</td>
+               <td>DIO.DQ_9		</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ10	</td>
+               <td>DIO.DQ_10	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="dq">
+               <td>-X1: DQ11	</td>
+               <td>DIO.DQ_11	</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ12	</td>
+               <td>DIO.DQ_12	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="dq">
+               <td>-X1: DQ13	</td>
+               <td>DIO.DQ_13	</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ14	</td>
+               <td>DIO.DQ_14	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+            <tr class="dq">
+               <td>-X1: DIQ15	</td>
+               <td>DIO.DQ_15	</td>
+               <td>&nbsp;		</td>
+            </tr>
+            <tr class="dq">
+               <td>-X1: DQ16	</td>
+               <td>DIO.DQ_16	</td>
+               <td>&nbsp;		</td>
+            </tr>			
+			
+			<tr class="ai">
+               <td>-X1: AI1					</td>
+               <td>AN.AI_1					</td>
+               <td>Analogeingang 1 (0..10V)	</td>
+            </tr>
+            <tr class="ai">
+               <td>-X1: AI2					</td>
+               <td>AN.AI_2					</td>
+               <td>Analogeingang 2 (0..10V)	</td>
+            </tr>
+            <tr class="aq">
+               <td>-X1: AQ1 				</td>
+               <td>AN.AQ_1					</td>
+               <td>Analogausgang 1 (0..10V)	</td>
+            </tr>
+            <tr class="aq">
+               <td>-X1: AQ2 				</td>
+               <td>AN.AQ_2					</td>
+               <td>Analogausgang 2 (0..10V)	</td>
+            </tr>			
+				</table
+				</span>
+			
+   </body>
+   
+   
+</html>
