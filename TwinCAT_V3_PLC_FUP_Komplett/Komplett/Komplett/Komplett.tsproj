@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.2">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.4">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -1393,7 +1393,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
 			<BitSize>14</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1402,7 +1402,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
 			<BitSize>7</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -2791,20 +2791,6 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>AN.AI_1</Name>
-							<Comment>
-								<![CDATA[ Analogeingang AI 1	]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>AN.AI_2</Name>
-							<Comment>
-								<![CDATA[ Analogeingang AI 2	]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>dSub.B1</Name>
 							<Comment>
 								<![CDATA[ Linearantrieb Endlage links (Öffner)]]>
@@ -2896,25 +2882,25 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>dSub.AI_0</Name>
-							<Comment>
-								<![CDATA[ Analogeingang 0]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>dSub.AI_1</Name>
-							<Comment>
-								<![CDATA[ Analogeingang 1]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>DIO.DI_1</Name>
 							<Comment>
 								<![CDATA[ Digitaler Eingang 1]]>
 							</Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>AN.AI_1</Name>
+							<Comment>
+								<![CDATA[ Analogeingang AI 1	]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>AN.AI_2</Name>
+							<Comment>
+								<![CDATA[ Analogeingang AI 2	]]>
+							</Comment>
+							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>DIO.DI_2</Name>
@@ -3021,23 +3007,23 @@ External Setpoint Generation:
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>dSub.AI_0</Name>
+							<Comment>
+								<![CDATA[ Analogeingang 0]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.AI_1</Name>
+							<Comment>
+								<![CDATA[ Analogeingang 1]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>AN.AQ_1</Name>
-							<Comment>
-								<![CDATA[ Analogausgang AQ 1	]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>AN.AQ_2</Name>
-							<Comment>
-								<![CDATA[ Analogausgang AQ 2	]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
 						<Var>
 							<Name>dSub.Q1</Name>
 							<Comment>
@@ -3081,9 +3067,16 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>dSub.AQ_0</Name>
+							<Name>AN.AQ_1</Name>
 							<Comment>
-								<![CDATA[ Analogausgang 0]]>
+								<![CDATA[ Analogausgang AQ 1	]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>AN.AQ_2</Name>
+							<Comment>
+								<![CDATA[ Analogausgang AQ 2	]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
@@ -3198,6 +3191,13 @@ External Setpoint Generation:
 								<![CDATA[ Digitaler Ausgang 16]]>
 							</Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>dSub.AQ_0</Name>
+							<Comment>
+								<![CDATA[ Analogausgang 0]]>
+							</Comment>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<TaskPouOids>
