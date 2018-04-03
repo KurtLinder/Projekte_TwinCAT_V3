@@ -3,29 +3,26 @@
   <POU Name="ZweipunktRegler" Id="{20e314d3-8c7e-46dd-8198-6fb13d4a01d0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM ZweipunktRegler
 VAR
-	fSetpointValue						: FLOAT	:= 50.0;
-	fActualValue						: FLOAT;
+	fSetpointValue					: FLOAT	:= 50.0;
+	fActualValue					: FLOAT;
 
 	bManSyncValue					: BOOL;
-	bSync								: BOOL;
-	bOut								: BOOL;
+	bSync							: BOOL;
+	bOut							: BOOL;
+	eMode							: E_CTRL_MODE;
+	stCTRL_2POINT_PARAMS			: ST_CTRL_2POINT_PARAMS;
 
-
-	eMode								: E_CTRL_MODE;
-	stCTRL_2POINT_PARAMS		: ST_CTRL_2POINT_PARAMS;
-
-	eErrorId							: E_CTRL_ERRORCODES;
-	bError								: BOOL;
+	eErrorId						: E_CTRL_ERRORCODES;
+	bError							: BOOL;
 
 	(* Controller *)
 	fbCTRL_2POINT					: FB_CTRL_2POINT;
 
-	bInit								: BOOL	:= TRUE;
-	fDelta								: FLOAT := 0.2;	
+	bInit							: BOOL	:= TRUE;
 
-	fSetpointValueToScope: FLOAT;
-	fActualValueToScope: FLOAT;
-	bOutToScope: BOOL;
+	fSetpointValueToScope			: FLOAT;
+	fActualValueToScope				: FLOAT;
+	bOutToScope						: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -33,42 +30,41 @@ END_VAR
 IF bInit
 THEN
 	(* init parameter struct *)
-	stCTRL_2POINT_PARAMS.tCtrlCycleTime			:= T#10ms;
-	stCTRL_2POINT_PARAMS.tTaskCycleTime			:= T#10ms;
-	stCTRL_2POINT_PARAMS.fHysteresisRange		:= 20.0;
+	stCTRL_2POINT_PARAMS.tCtrlCycleTime		:= T#10MS;
+	stCTRL_2POINT_PARAMS.tTaskCycleTime		:= T#10MS;
+	stCTRL_2POINT_PARAMS.fHysteresisRange	:= 2.0;
 
 	(* set the mode to ACTIVE --> normal operation *)
-	eMode								:= eCTRL_MODE_ACTIVE;
+	eMode									:= eCTRL_MODE_ACTIVE;
 
 	(* reset the init flag *)
-	bInit								:= FALSE;
+	bInit									:= FALSE;
 END_IF
 
 
 (* generate input signal *)
 
 
-fActualValue := AN.AI_1 / 324;
+fActualValue := AN.AI_1;
+fActualValue := fActualValue / 324;
 
-
-//fActualValue := fActualValue + fDelta;
 
 (* copy var to scope var *)
-fSetpointValueToScope 	:= fSetpointValue;
+fSetpointValueToScope 		:= fSetpointValue;
 fActualValueToScope 		:= fActualValue;
 
 (* call controller *)
-fbCTRL_2POINT(		fSetpointValue		:= fSetpointValue,
-						fActualValue		:= fActualValue,
-						bManSyncValue	:= bManSyncValue,
-						bSync				:= bSync,
+fbCTRL_2POINT(		fSetpointValue	:= fSetpointValue,
+					fActualValue	:= fActualValue,
+					bManSyncValue	:= bManSyncValue,
+					bSync			:= bSync,
 
-						eMode				:= eMode,
-						stParams			:=stCTRL_2POINT_PARAMS,
+					eMode			:= eMode,
+					stParams		:=stCTRL_2POINT_PARAMS,
 
-						bOut				=> bOut,
-						eErrorId			=> eErrorId,
-						bError				=> bError);
+					bOut			=> bOut,
+					eErrorId		=> eErrorId,
+					bError			=> bError);
 
 (* copy var to scope var *)
 bOutToScope := bOut;
@@ -87,7 +83,9 @@ END_IF;
       <LineId Id="86" Count="0" />
       <LineId Id="73" Count="1" />
       <LineId Id="84" Count="1" />
-      <LineId Id="50" Count="19" />
+      <LineId Id="51" Count="12" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="65" Count="4" />
       <LineId Id="39" Count="0" />
       <LineId Id="76" Count="0" />
       <LineId Id="75" Count="0" />

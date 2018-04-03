@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="fbTemperaturEingangNormieren" Id="{ee23ab1e-d287-44d8-866d-6c63d8a220bf}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK fbTemperaturEingangNormieren
+VAR_INPUT
+	iAnalogEingang:	INT		:= 0;	//Analogeingang (+/- 32767)
+	rMinWarnung:	REAL	:= 0.0;	//Warnung - unteres LIMIT in °C
+	rMaxWarnugn	:	REAL	:= 0.0;	//Warnung - oberes LIMIT in °C
+	rMinStoerung:	REAL	:= 0.0;	//Störung - unteres LIMIT in °C
+	rMaxStoerung:	REAL	:= 0.0;	//Störung - oberes LIMIT in °C
+	rHysterese:		REAL	:= 0.0;	//Hysterese in °C
+	iX0:			INT		:= 0;	//Punkt 0 - Analogeingang
+	iX1:			INT		:= 0;	//Punkt 1 - Analogeingang
+	rY0:			REAL	:= 0.0;	//Punkt 0 - Temperatur
+	rY1:			REAL	:= 0.0;	//Punkt 1 - Temperatur
+END_VAR
+
+VAR_OUTPUT	
+	rTemperatur:	REAL	:= 0.0;	//Temperatur in °C
+	xMinWarnung:	BOOL	:= FALSE;	//Warnung - unteres LIMIT
+	xMaxWarnung:	BOOL	:= FALSE;	//Warnung - oberes LIMIT
+	xMinStoerung:	BOOL	:= FALSE;	//Störung - unteres LIMIT
+	xMaxStoerung:	BOOL	:= FALSE;	//Störung - oberes LIMIT	
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="fbTemperaturEingangNormieren">
+      <LineId Id="21" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

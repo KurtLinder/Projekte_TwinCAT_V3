@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="Analogwerte" Id="{cb65ceda-4bf1-470d-b57d-3c08e6479214}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TemperaturEingangNormieren
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	TempNormieren : fbTemperaturEingangNormieren;
+	rTemperatur: REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+TempNormieren(
+	iAnalogEingang:= AN.AI_1, 
+	rMinWarnung:= 10.0, 
+	rMaxWarnugn:= 90.0, 
+	rMinStoerung:= 5.0, 
+	rMaxStoerung:= 95.0, 
+	rHysterese:= 1.0, 
+	iX0:= 0, 
+	iX1:= 2048, 
+	rY0:= 0, 
+	rY1:= 100, 
+	rTemperatur=> rTemperatur, 
+	xMinWarnung=> DIO.DQ_1, 
+	xMaxWarnung=> DIO.DQ_2, 
+	xMinStoerung=> DIO.DQ_3, 
+	xMaxStoerung=> DIO.DQ_4);]]></ST>
+    </Implementation>
+    <LineIds Name="TemperaturEingangNormieren">
+      <LineId Id="21" Count="15" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
