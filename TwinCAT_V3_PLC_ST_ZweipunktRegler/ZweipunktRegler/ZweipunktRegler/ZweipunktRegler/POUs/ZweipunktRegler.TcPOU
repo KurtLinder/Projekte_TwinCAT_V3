@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="ZweipunktRegler" Id="{20e314d3-8c7e-46dd-8198-6fb13d4a01d0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM ZweipunktRegler
+VAR
+	fSetpointValue						: FLOAT	:= 50.0;
+	fActualValue						: FLOAT;
+
+	bManSyncValue					: BOOL;
+	bSync								: BOOL;
+	bOut								: BOOL;
+
+
+	eMode								: E_CTRL_MODE;
+	stCTRL_2POINT_PARAMS		: ST_CTRL_2POINT_PARAMS;
+
+	eErrorId							: E_CTRL_ERRORCODES;
+	bError								: BOOL;
+
+	(* Controller *)
+	fbCTRL_2POINT					: FB_CTRL_2POINT;
+
+	bInit								: BOOL	:= TRUE;
+	fDelta								: FLOAT := 0.2;	
+
+	fSetpointValueToScope: FLOAT;
+	fActualValueToScope: FLOAT;
+	bOutToScope: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF bInit
+THEN
+	(* init parameter struct *)
+	stCTRL_2POINT_PARAMS.tCtrlCycleTime			:= T#10ms;
+	stCTRL_2POINT_PARAMS.tTaskCycleTime			:= T#10ms;
+	stCTRL_2POINT_PARAMS.fHysteresisRange		:= 20.0;
+
+	(* set the mode to ACTIVE --> normal operation *)
+	eMode								:= eCTRL_MODE_ACTIVE;
+
+	(* reset the init flag *)
+	bInit								:= FALSE;
+END_IF
+
+
+(* generate input signal *)
+
+
+fActualValue := AN.AI_1 / 324;
+
+
+//fActualValue := fActualValue + fDelta;
+
+(* copy var to scope var *)
+fSetpointValueToScope 	:= fSetpointValue;
+fActualValueToScope 		:= fActualValue;
+
+(* call controller *)
+fbCTRL_2POINT(		fSetpointValue		:= fSetpointValue,
+						fActualValue		:= fActualValue,
+						bManSyncValue	:= bManSyncValue,
+						bSync				:= bSync,
+
+						eMode				:= eMode,
+						stParams			:=stCTRL_2POINT_PARAMS,
+
+						bOut				=> bOut,
+						eErrorId			=> eErrorId,
+						bError				=> bError);
+
+(* copy var to scope var *)
+bOutToScope := bOut;
+
+IF bOut THEN
+	AN.AQ_1 := 10000;
+ELSE
+	AN.AQ_1 := 0;
+END_IF;
+		]]></ST>
+    </Implementation>
+    <LineIds Name="ZweipunktRegler">
+      <LineId Id="26" Count="12" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="40" Count="2" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="73" Count="1" />
+      <LineId Id="84" Count="1" />
+      <LineId Id="50" Count="19" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="79" Count="1" />
+      <LineId Id="82" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
