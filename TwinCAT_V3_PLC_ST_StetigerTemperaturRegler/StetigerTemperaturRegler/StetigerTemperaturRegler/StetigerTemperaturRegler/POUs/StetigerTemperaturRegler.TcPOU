@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="StetigerTemperaturRegler" Id="{20e314d3-8c7e-46dd-8198-6fb13d4a01d0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM StetigerTemperaturRegler
+VAR
+	
+		eCTRL_Mode 				: E_CTRL_MODE := eCTRL_MODE_Tune; 	(*   eCTRL_MODE_TUNE  ;*)
+		bSelSetpoint			: BOOL	:= FALSE;
+		
+		fW						: LREAL;						(* setpoint *)
+		fW1						: LREAL := 70;					(* first setpoint *)
+		fW2						: LREAL := 35.0;				(* second setpoint - standby setpoint*)
+		fY						: LREAL;						(* control value *)
+		fX						: LREAL;						(* actual value from simulated process *)
+		bYPWMPos				: BOOL;
+		bYPWMNeg				: BOOL;
+		
+		bNoise					: BOOL;
+		bError 					: BOOL;
+		eErrorId 				: E_CTRL_ErrorCodes;
+		
+		stControllerParameter	: ST_CTRL_TempCtrlParameter := (		
+		
+		(* general parameters 													 *)
+		iMode					:= 1,											(* 1=heating, 2=cooling, 3=heating&cooling *)
+		iReactionOnFailure		:= eCTRL_ReactionOnFailure_StopController,		(* 0=controller off, 1=manual op, 2=yMin, 3=yMax *)
+	
+		bSelCtrlParameterSet	:= FALSE,										(* FALSE = internal set, TRUE = external set *)
+	
+		dwAlarmSupp				:= 16#0000EFFF,									(* alarm suppression *)
+		tCtrlCycleTime			:= T#500MS,										(* controller cycle time *)
+		tTaskCycleTime			:= T#10MS,										(* plc task cycle time *)
+		
+		(* tuning parameters 													 *)
+		iTuningMode				:= 1,											(* only heating, only cooling, first heating then cooling or vice versa *)
+	
+		tTuneStabilisation		:= T#20S,										(* wait for a stable system *)
+	
+		fEndTunePercentHeating	:= 80.0,										(* switch to closed loop control when X > 0.8*W *)
+		fYTuneHeating			:= 16000.0,										(* step change while tuning operation *)
+		fYStableHeating			:= 0.0,											(* tuning operation *)
+	
+		fEndTunePercentCooling	:= 20.0,										(* switch to closed loop control when X < 0.2*W *)
+		fYTuneCooling			:= 0.0,											(* step change while tuning operation *)
+		fYStableCooling			:= 0.0,											(* tuning operation *)
+		fScalingFactor			:= 1.0,											(* Scaling factor for KP heating/cooling *)
+		
+		(* setpoint parameters 													 *)
+		fWMin					:= 0.0,											(* lower limit *)
+		fWMax					:= 300.0,										(* upper limit *)
+	
+		(* start up *)
+		bEnableSoftStart		:= FALSE,										(* FALSE = no soft start, TRUE = soft start *)
+		bEnableRamping			:= FALSE,										(* FALSE = no ramping, TRUE = ramping *)
+	
+		fWStartUp				:= 0.0,											(* soft start plateau setpoint *)
+		tStartUp				:= T#0MS,										(* soft start waiting time*)
+		bStartUpRamping			:= FALSE,										(* enable ramping while start up phase *)
+		fWStartUpVeloPos		:= 1.0,											(* max gradient for increasing setpoint in start up phase*)
+		fWStartUpVeloNeg		:= 1.0,											(* max gradient for decreasing setpoint in start up phase *)
+	
+		fWVeloPos				:= 1.0,											(* max gradient for increasing setpoint *)
+		fWVeloNeg				:= 1.0,											(* max gradient for decreasing setpoint *)	
+	
+		(* actual value parameters     											 *)
+		bFilter 				:= FALSE,
+		tFilter					:= T#0S,
+		
+		(* deadband parameters     												 *)
+		bDeadband				:= FALSE,
+		fEDeadband				:= 0.0,											(* deadband *)
+		
+		(* control value parameters     										 *)
+		fYMin					:= 0.0,											(* lower limit *)
+		fYMax					:= 16000.0,										(* upper limit *)
+		fYManual				:= 0.0,									 		(* manual operation*)
+		fYOnFailure				:= 0.0,											(* control value on failure *)
+	
+		tPWMCycleTime			:= t#1s,										(* PWM: period *)
+		tPWMMinOffTime			:= t#0s,										(* PWM: min off time *)
+		tPWMMinOnTime			:= t#0s,										(* PWM: min on time *)
+		tPWMWaitingTime			:= t#0s,										(* PWM: min waiting time *) (* not yet implemented !!!!*)
+	
+		fYThresholdOff			:= 0.0,											(* 3-Point: Off threshold *)
+		fYThresholdOn			:= 0.0,											(* 3-Point: On threshold *)
+	
+		nCyclesForSwitchOver	:= 100,
+	
+		(* controller settings			     									 *)
+		bEnablePreController 	:= FALSE,										(* enable precontroller *)
+		bEnableZones 			:= FALSE,										(* enable zone around setpoint with open loop control *)
+		bEnableCVFilter 		:= FALSE,										(* enable filter for CV (type see iFilterType) *)
+		iFilterType 			:= E_FilterType_FIRSTORDER,			 			(* filtertype of CV filter *)
+		iControllerType 		:= eCTRL_ControllerType_PID,					(* used controller normally PID *)
+		
+		
+		(* min max temperatures	     											 *)
+		TempLow					:= -5.0,
+		TempLowLow				:= -10.0,
+		TempHigh				:= 5.0,
+		TempHighHigh			:= 10.0,
+		TempAbsoluteHigh		:= 300.0,
+		TempAbsoluteLow			:= 0.0,	
+		
+		(* internal tuning parameters *)
+		fTuneKp					:= 1.2,
+		fTuneTn					:= 2.0,
+		fTuneTv					:= 0.42,
+		fTuneTd					:= 0.25
+		);
+	
+	fbTempController			: FB_CTRL_TempController;
+	
+	fbCtrlParameter				: FB_CTRL_CtrlParameter;
+	stController				: ST_CTRL_ParaController;
+	
+	(* Debug *)
+	fMaxOvershoot			: LREAL;
+	tStartUpTime			: TIME;
+	eCtrlState				: E_CTRL_STATE;	
+	
+	fw_Scope : LREAL;
+	fX_Scope: LREAL;
+	fY_Scope: LREAL;
+	fActualValue: FLOAT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Select setpoint *)
+IF bSelSetpoint THEN
+	fW := fW2;
+ELSE
+	fW := fW1;
+END_IF
+
+
+fActualValue := AN.AI_1;
+fActualValue := fActualValue / 326;
+
+(* Start controller *)
+fbTempController(
+					eCtrlMode				:= eCTRL_Mode, 
+					bSelSetpoint			:= bSelSetpoint, 
+					fW1						:= fW1, 
+					fW2						:= fW2, 
+					fX						:= fActualValue,		// Add measured temperature here 
+					fYManual				:= , 
+					bOpenThermocouple		:= FALSE, 
+					bReverseThermocouple	:= FALSE, 
+					bBackVoltage			:= FALSE, 
+					bLeakage				:= FALSE, 
+					bShortCircuit			:= FALSE, 
+					bOpenCircuit			:= FALSE, 
+					sParaControllerExternal	:= stController, 
+					sControllerParameter	:= stControllerParameter, 
+					);
+					 
+(* Analog output *)			
+fY := fbTempController.fYAnalog;
+
+(* Digital (PWM) output *)
+bYPWMPos := fbTempController.bYPWMPos;
+bYPWMNeg := fbTempController.bYPWMNeg;
+
+bError := fbTempController.bError;
+eErrorId := fbTempController.eErrorId;
+
+(* Choose set of controller parameters *)
+IF fbTempController.eCtrlState = eCTRL_STATE_TUNED THEN
+	eCTRL_Mode := eCTRL_MODE_ACTIVE;	
+END_IF
+
+
+(* Debug *)
+fMaxOvershoot := fbTempController.fMaxOverShoot;
+tStartUpTime := fbTempController.tStartUpTime;
+
+(* Scope *)
+fW_Scope := fW;
+fX_Scope := fActualValue;
+fY_Scope := fY;
+
+(*Ausgang*)
+AN.AQ_1 :=  LREAL_TO_INT(fY);	// 0 - 16.000 digit]]></ST>
+    </Implementation>
+    <LineIds Name="TemperaturRegler">
+      <LineId Id="256" Count="6" />
+      <LineId Id="267" Count="0" />
+      <LineId Id="320" Count="0" />
+      <LineId Id="317" Count="0" />
+      <LineId Id="319" Count="0" />
+      <LineId Id="271" Count="19" />
+      <LineId Id="318" Count="0" />
+      <LineId Id="291" Count="22" />
+      <LineId Id="83" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
