@@ -1420,7 +1420,7 @@ External Setpoint Generation:
 		<ImageData Id="1005">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ff000000000000ff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ff000000000000ff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
 		<ImageData Id="1006">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ff00bfffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c080808000bfff00bfff00bfff00bfff00bfffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ff00bfffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
 	</ImageDatas>
-	<Project ProjectGUID="{A6DF7230-96D4-4CB7-A9A0-B3F8FB3C705D}" TargetNetId="5.35.139.20.1.1" Target64Bit="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{A6DF7230-96D4-4CB7-A9A0-B3F8FB3C705D}" TargetNetId="5.35.139.20.1.1" ShowHideConfigurations="#x106">
 		<System>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
@@ -1430,7 +1430,7 @@ External Setpoint Generation:
 		</System>
 		<Motion>
 			<NC>
-				<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true" AmsNetId="192.168.41.47.1.1">
+				<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true">
 					<Name>NC-Task 1 SAF</Name>
 					<Vars VarGrpType="1" InsertType="1">
 						<Name>Inputs</Name>
@@ -2791,16 +2791,30 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
+							<Name>dSub.S9_1</Name>
+							<Comment>
+								<![CDATA[ Taster Not Halt (Öffner)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>dSub.S9_2</Name>
+							<Comment>
+								<![CDATA[ Taster Not Halt (Schliesser)]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>dSub.B1</Name>
 							<Comment>
-								<![CDATA[ Linearantrieb Endlage links (Öffner)]]>
+								<![CDATA[ Lichtschranke 0°]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.B2</Name>
 							<Comment>
-								<![CDATA[ Linearantrieb Endlage rechts (Öffner)]]>
+								<![CDATA[ Lichtschranke 45° CCW]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -2812,72 +2826,51 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>dSub.S6</Name>
+							<Comment>
+								<![CDATA[ Taster Pfeil links (Schliesser)	]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>dSub.S2</Name>
 							<Comment>
-								<![CDATA[ Taster (0) (Öffner)]]>
+								<![CDATA[ Taster (0) (Öffner)		]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S3</Name>
 							<Comment>
-								<![CDATA[ Taster I (Schliesser)]]>
+								<![CDATA[ Taster I (Schliesser)		]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S4</Name>
 							<Comment>
-								<![CDATA[ Taster II (Schliesser)]]>
+								<![CDATA[ Taster STOP (Öffner)	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S5</Name>
 							<Comment>
-								<![CDATA[ Taster Pfeil auf (Schliesser)]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S6</Name>
-							<Comment>
-								<![CDATA[ Taster Pfeil ab (Schliesser)]]>
+								<![CDATA[ Taster II (Schliesser)	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S7</Name>
 							<Comment>
-								<![CDATA[ Taster + (Schliesser)]]>
+								<![CDATA[ Taster STOP (Öffner)		]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S8</Name>
 							<Comment>
-								<![CDATA[ Taster - (Schliesser)]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S9</Name>
-							<Comment>
-								<![CDATA[ Taster STOP (Öffner)]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S10</Name>
-							<Comment>
-								<![CDATA[ Taster Not Halt (Öffner)]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S11</Name>
-							<Comment>
-								<![CDATA[ Taster Not Halt (Schliesser)]]>
+								<![CDATA[ Taster Pfeil rechts (Schliesser)	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -2887,46 +2880,53 @@ External Setpoint Generation:
 						<Var>
 							<Name>dSub.Q1</Name>
 							<Comment>
-								<![CDATA[ Linearantrieb Rechtslauf]]>
+								<![CDATA[ Motor Schnell	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.Q2</Name>
 							<Comment>
-								<![CDATA[ Linearantrieb Linkslauf]]>
+								<![CDATA[ Motor Linkslauf	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P1</Name>
 							<Comment>
-								<![CDATA[ Meldeleuchte im Taster S1 (weiß)]]>
+								<![CDATA[ Meldeleuchte weiß	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P2</Name>
 							<Comment>
-								<![CDATA[ Meldeleuchte weiß]]>
+								<![CDATA[ Meldeleuchte rot	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P3</Name>
 							<Comment>
-								<![CDATA[ Meldeleuchte rot]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.P4</Name>
-							<Comment>
 								<![CDATA[ Meldeleuchte grün]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>dSub.Q3</Name>
+							<Comment>
+								<![CDATA[ Motor Langsam	]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2018-05-08T14:19:47">
+						<OwnerA Name="InputDst" Prefix="TIPC^Getriebemotor^Getriebemotor Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL1809)">
+								<Link VarA="dSub.S11" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 13^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x08502001"/>
 					</TaskPouOids>
@@ -5614,27 +5614,26 @@ Bit 8 - 15 : reserved]]>
 		</OwnerA>
 		<OwnerA Name="TIPC^Getriebemotor^Getriebemotor Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL1809)">
-				<Link VarA="PlcTask Inputs^dSub.B1" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.B2" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S1" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S10" VarB="Channel 12^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S11" VarB="Channel 13^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S2" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S3" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S4" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S5" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.B1" VarB="Channel 11^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.B2" VarB="Channel 12^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S1" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S2" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S3" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S4" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S5" VarB="Channel 5^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.S6" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S7" VarB="Channel 10^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S8" VarB="Channel 9^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S9" VarB="Channel 11^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S7" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S8" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S9_1" VarB="Channel 10^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S9_2" VarB="Channel 9^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2809)">
-				<Link VarA="PlcTask Outputs^dSub.P1" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^dSub.P2" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^dSub.P3" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^dSub.P4" VarB="Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P1" VarB="Channel 5^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P2" VarB="Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P3" VarB="Channel 7^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.Q1" VarB="Channel 1^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.Q2" VarB="Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.Q3" VarB="Channel 3^Output"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
