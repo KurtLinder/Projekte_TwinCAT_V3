@@ -2785,7 +2785,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{6E2725C0-ACAD-4E3B-B802-4FDDB7FFCDDD}" Name="Hochregallager" PrjFilePath="Hochregallager\Hochregallager.plcproj" TmcFilePath="Hochregallager\Hochregallager.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Getriebemotor\Getriebemotor.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Hochregallager\Hochregallager.tmc">
 					<Name>Hochregallager Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -2807,14 +2807,14 @@ External Setpoint Generation:
 						<Var>
 							<Name>dSub.B3</Name>
 							<Comment>
-								<![CDATA[ Drehposition rechts	]]>
+								<![CDATA[ Drehposition links	]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.B4</Name>
 							<Comment>
-								<![CDATA[ Drehposition links]]>
+								<![CDATA[ Drehposition rechts (Bedienpult)]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -2826,37 +2826,9 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>dSub.S6</Name>
+							<Name>dSub.B6</Name>
 							<Comment>
-								<![CDATA[ Taster Pfeil links (Schliesser)	]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S7</Name>
-							<Comment>
-								<![CDATA[ Taster STOP (Öffner)		]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S8</Name>
-							<Comment>
-								<![CDATA[ Taster Pfeil rechts (Schliesser)	]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S9_1</Name>
-							<Comment>
-								<![CDATA[ Taster Not Halt (Öffner)]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S9_2</Name>
-							<Comment>
-								<![CDATA[ Taster Not Halt (Schliesser)]]>
+								<![CDATA[ Ebene Freigabe]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -5588,14 +5560,10 @@ Bit 8 - 15 : reserved]]>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL1809)">
 				<Link VarA="PlcTask Inputs^dSub.B1" VarB="Channel 1^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.B2" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.B3" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.B4" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.B3" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.B4" VarB="Channel 4^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.B5" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S6" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S7" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S8" VarB="Channel 8^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S9_1" VarB="Channel 10^Input"/>
-				<Link VarA="PlcTask Inputs^dSub.S9_2" VarB="Channel 9^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.B6" VarB="Channel 6^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2809)">
 				<Link VarA="PlcTask Outputs^dSub.Q1" VarB="Channel 1^Output"/>

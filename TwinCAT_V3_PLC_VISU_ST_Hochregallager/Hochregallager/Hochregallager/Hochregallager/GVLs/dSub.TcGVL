@@ -6,8 +6,8 @@ VAR_GLOBAL
 	
 	B1 AT %I*: BOOL;	// Werkstück auf Gabel
 	B2 AT %I*: BOOL; 	// Gabel unten	
-	B3 AT %I*: BOOL;	// Drehposition rechts	
-	B4 AT %I*: BOOL;	// Drehposition links
+	B3 AT %I*: BOOL;	// Drehposition links	
+	B4 AT %I*: BOOL;	// Drehposition rechts (Bedienpult)
 	B5 AT %I*: BOOL;	// Drehposition mitte
 	B6 AT %I*: BOOL;	// Ebene Freigabe
 		
