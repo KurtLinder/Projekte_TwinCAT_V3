@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedSymbol>
+      <Type guid="7948aa29-e1c8-4c93-94b5-310d9886c537">dSub</Type>
+      <From>S7</From>
+      <To>B6</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="7948aa29-e1c8-4c93-94b5-310d9886c537">dSub</Type>
+      <From>S7</From>
+      <To>B6</To>
+    </RenamedSymbol>
+  </Renames>
+</Refactors>

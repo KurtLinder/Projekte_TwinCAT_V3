@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="Hochregallager" Id="{cb65ceda-4bf1-470d-b57d-3c08e6479214}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Hochregallager
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[dSub.Q1 := FALSE;
+dSub.Q2 := FALSE; 
+dSub.Q3 := FALSE;
+dSub.Q4 := FALSE;
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="Hochregallager">
+      <LineId Id="26" Count="0" />
+      <LineId Id="34" Count="2" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
