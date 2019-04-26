@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <ImagePool Name="Bildersammlung" Id="{5675b800-1031-45ee-a643-47d071fc2d59}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="ImagePoolObject">
+          <v n="UniqueIdGenerator">"7"</v>
+          <l n="BitmapPool" t="ArrayList" cet="ImagePoolItem">
+            <o>
+              <v n="BitmapID">"Schwimmerschalter_Offen"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|H:\TwinCAT_V3\TankFuellAnlage\HMI_Symbole_Schwimmerschalter_Schliesser.jpg"</v>
+              <v n="ItemID">1</v>
+            </o>
+            <o>
+              <v n="BitmapID">"Schwimmerschalter_Betätigt"</v>
+              <v n="FileID">"5ce3da45-db07-42e7-a21c-a00fff4ed8f6|H:\TwinCAT_V3\TankFuellAnlage\HMI_Symbole_Schwimmerschalter_Schliesser_Betaetigt.jpg"</v>
+              <v n="ItemID">2</v>
+            </o>
+            <o>
+              <v n="BitmapID">""</v>
+              <v n="FileID">""</v>
+              <v n="ItemID">5</v>
+            </o>
+          </l>
+          <v n="GuidInit">{0a4c8d40-d258-497e-a43a-0d183eff33a6}</v>
+          <v n="GuidReInit">{de9598c9-6e2c-42a8-a543-62d37a95ddce}</v>
+          <v n="GuidExitX">{5bf4be36-06f4-49d6-b914-8ca71c499db3}</v>
+          <v n="ValidIds">false</v>
+        </o>
+      </Data>
+      <TypeList>
+        <Type n="ArrayList">System.Collections.ArrayList</Type>
+        <Type n="Boolean">System.Boolean</Type>
+        <Type n="Guid">System.Guid</Type>
+        <Type n="ImagePoolItem">{215b2719-0347-4e4d-ba85-8bcd66946f66}</Type>
+        <Type n="ImagePoolObject">{bb0b9044-714e-4614-ad3e-33cbdf34d16b}</Type>
+        <Type n="Int32">System.Int32</Type>
+        <Type n="String">System.String</Type>
+      </TypeList>
+    </XmlArchive>
+  </ImagePool>
+</TcPlcObject>
