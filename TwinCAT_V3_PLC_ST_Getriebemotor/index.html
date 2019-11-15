@@ -1,140 +1,169 @@
 <!doctype html>
 <html lang="de">
-   <head>
-      <meta charset="utf-8">
-      <title>Projekt</title>
-      <style>
-         h1 {
-         font-family: arial, sans-serif;
-         text-align: center;
-         padding: 1em;
-         border: 3px solid black;
-         background-color: #E0E0E0;
-         display: inline-block;
-         }
-         .text_schwarz {
-         font-family: arial, sans-serif;
-         font-size: 12pt;
-         font-weight: normal;
-         color: black;
-         }
-		.di {
-		 background-color: rgb(243, 247, 129);
-		 width: 50px;
-		 }
-		.dq {
-		 background-color: rgb(169, 245, 225);
-		 width: 80px;
+
+<head>
+	<meta charset="utf-8">
+	<title>Projekt</title>
+	<style>
+		h1 {
+			font-family: arial, sans-serif;
+			text-align: center;
+			padding: 1em;
+			border: 3px solid black;
+			background-color: #E0E0E0;
+			display: inline-block;
 		}
-      </style>
-   </head>
-   <body>
-      <h1>Beckhoff Getriebemotor (ST)  </h1>
-	  
 
-		<table>
-			<tr>
-				<td style="vertical-align: top;">
-					<img width="400px" src="https://www.linderonline.at/medien/image/lbs/lau/tia_portal_v14/getriebemotor_mit_gabellichtschranke.jpg" /> 
-				</td>
-				<td style="vertical-align: top;">
-				
-					<span class="text_schwarz">
-						<table border="1" cellpadding="5">
-						<tr class="variablentabelle">    
-						  <td>Bezeichnung			            </td>
-						  <td colspan="2">Kommentar	            </td>
-						</tr> 
+		.text_schwarz {
+			font-family: arial, sans-serif;
+			font-size: 12pt;
+			font-weight: normal;
+			color: black;
+		}
 
-					  <tr class="di">  		
-						<td>dSub.B1								</td>    
-						<td colspan="2">Lichtschranke 0°	    </td> 
-					  </tr>
-					  <tr class="di"> 	
-						<td>dSub.B2								</td>    
-						<td colspan="2">Lichtschranke 45° CCW	</td> 	
-					  </tr>
-						  
-					  <tr class="di"> 		
-						<td>dSub.S1						        </td>	 
-						<td>Taster (❶) → Schliesser             </td>  
-						<td rowspan="2"> <img width="50px" src="https://www.linderonline.at/medien/image/lbs/lau/tia_portal_v14/taster_ein_aus.jpg" />		</td>  
-					  </tr>  
-					  <tr class="di">  	
-						<td>dSub.S2						        </td>	
-						<td>Taster (⓿) → Öffner		            </td>
-					  </tr>  
-					  <tr class="di">  		
-						<td>dSub.S3						        </td>	
-						<td>Taster (Ⅰ) → Schliesser	        </td>
-						<td rowspan="3"> <img width="50px"   src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/taster_i_stop_ii.jpg" />		</td> 
-					  </tr>  
-					  <tr class="di">
-						<td>dSub.S4						        </td>
-						<td>Taster (STOP) → Öffner	            </td> 
-					  </tr> 
-					  <tr class="di"> 	
-						<td>dSub.S5							    </td>	
-						<td>Taster (Ⅱ) → Schliesser		    </td>
-					  </tr>  
-					  
-					  <tr class="di"> 	
-						<td>dSub.S6							    </td>	
-						<td>Taster (&larr;) → Schliesser		</td>
-						<td rowspan="3"> <img width="50px"  src="https://www.linderonline.at/medien/image/lbs/lau/tia_portal_v14/taster_pfeile_links_rechts.jpg" />		</td>
-					  </tr>  
-					  <tr class="di">  	
-						<td>dSub.S7						        </td>
-						<td>Taster (STOP) → Öffner	            </td> 
-					  </tr>   
-					  <tr class="di"> 		
-						<td>dSub.S8							    </td>	
-						<td>Taster (&rarr;) → Schliesser		</td>
-					  </tr>  
-						
-					  <tr class="di">	
-						<td>dSub.S9.1					        </td>	
-						<td>Not-Halt → Schliesser		        </td> 	
-						<td rowspan="2"> <img width="50px" src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/Not_Halt.JPG" /> </td> 
-					  </tr> 
-					  <tr class="di">
-						<td>dSub.S9.2					        </td>	
-						<td>Not-Halt → Öffner	                </td> 
-					  </tr> 
-						  
-					  <tr class="dq"> 	
-						<td>dSub.Q1						        </td>	
-						<td colspan="2">Motor Schnell (RL)      </td> 
-					  </tr>
-					  <tr class="dq"> 
-						<td>dSub.Q2						        </td>	
-						<td colspan="2">Motor Linkslauf	        </td> 
-					  </tr>
-					  <tr class="dq">
-						<td>dSub.Q3					            </td>
-						<td colspan="2">Motor Langsam (RL)		</td> 
-					  </tr> 
+		td {
+			font-family: arial, sans-serif;
+			font-size: 16pt;
+			font-weight: normal;
+			color: black;
+		}
 
-					  <tr class="dq">	
-						<td>dSub.P1					            </td>	
-						<td colspan="2">Meldeleuchte weiss		</td> 
-					  </tr>     
-					  <tr class="dq">
-						<td>dSub.P2					            </td>	
-						<td colspan="2">Meldeleuchte grün		</td>
-					  </tr>  
-					  <tr class="dq"> 	
-						<td>dSub.P3					            </td>	
-						<td colspan="2">Meldeleuchte rot		</td> 
-					  </tr>   
-					  
-					  </table>
-					</span>
+		a {
+			font-family: arial, sans-serif;
+			font-size: 16pt;
+			font-weight: normal;
+			color: black;
+		}
 
-  				</td>
-			</tr>
-		</table>
-		
-      <br><br>
-   </body>
+		.di {
+			font-family: arial, sans-serif;
+			background-color: rgb(243, 247, 129);
+		}
+
+		.dq {
+			font-family: arial, sans-serif;
+			background-color: rgb(169, 245, 225);
+		}
+
+		.ai {
+			font-family: arial, sans-serif;
+			background-color: rgb(201, 42, 172);
+		}
+
+		.aq {
+			font-family: arial, sans-serif;
+			background-color: rgb(42, 201, 201);
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Beckhoff Getriebemotor (ST) </h1>
+
+
+
+	<br><br>
+
+	<img width="400px"
+		src="https://www.linderonline.at/medien/image/lbs/lau/tia_portal_v14/getriebemotor_mit_gabellichtschranke.jpg" />
+
+	<br><br>
+
+	<table border="1" cellpadding="5">
+		<tr class="variablentabelle">
+			<td>Bezeichnung </td>
+			<td colspan="2">Kommentar </td>
+		</tr>
+
+		<tr class="di">
+			<td>dSub.B1 </td>
+			<td colspan="2">Lichtschranke 0° </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.B2 </td>
+			<td colspan="2">Lichtschranke 45° CCW </td>
+		</tr>
+
+		<tr class="di">
+			<td>dSub.S1 </td>
+			<td>Taster (❶) → Schliesser </td>
+			<td rowspan="2"> <img width="50px"
+					src="https://www.linderonline.at/medien/image/lbs/lau/tia_portal_v14/taster_ein_aus.jpg" /> </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S2 </td>
+			<td>Taster (⓿) → Öffner </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S3 </td>
+			<td>Taster (Ⅰ) → Schliesser </td>
+			<td rowspan="3"> <img width="50px"
+					src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/taster_i_stop_ii.jpg" /> </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S4 </td>
+			<td>Taster (STOP) → Öffner </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S5 </td>
+			<td>Taster (Ⅱ) → Schliesser </td>
+		</tr>
+
+		<tr class="di">
+			<td>dSub.S6 </td>
+			<td>Taster (&larr;) → Schliesser </td>
+			<td rowspan="3"> <img width="50px"
+					src="https://www.linderonline.at/medien/image/lbs/lau/tia_portal_v14/taster_pfeile_links_rechts.jpg" /> </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S7 </td>
+			<td>Taster (STOP) → Öffner </td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S8 </td>
+			<td>Taster (&rarr;) → Schliesser </td>
+		</tr>
+
+		<tr class="di">
+			<td>dSub.S9.1 </td>
+			<td>Not-Halt → Schliesser </td>
+			<td rowspan="2"> <img width="50px" src="https://www.linderonline.at/medien/image/lbs/lau/sr_labor/Not_Halt.JPG" />
+			</td>
+		</tr>
+		<tr class="di">
+			<td>dSub.S9.2 </td>
+			<td>Not-Halt → Öffner </td>
+		</tr>
+
+		<tr class="dq">
+			<td>dSub.Q1 </td>
+			<td colspan="2">Motor Schnell (RL) </td>
+		</tr>
+		<tr class="dq">
+			<td>dSub.Q2 </td>
+			<td colspan="2">Motor Linkslauf </td>
+		</tr>
+		<tr class="dq">
+			<td>dSub.Q3 </td>
+			<td colspan="2">Motor Langsam (RL) </td>
+		</tr>
+
+		<tr class="dq">
+			<td>dSub.P1 </td>
+			<td colspan="2">Meldeleuchte weiss </td>
+		</tr>
+		<tr class="dq">
+			<td>dSub.P2 </td>
+			<td colspan="2">Meldeleuchte grün </td>
+		</tr>
+		<tr class="dq">
+			<td>dSub.P3 </td>
+			<td colspan="2">Meldeleuchte rot </td>
+		</tr>
+
+	</table>
+
+	<br><br>
+</body>
+
 </html>

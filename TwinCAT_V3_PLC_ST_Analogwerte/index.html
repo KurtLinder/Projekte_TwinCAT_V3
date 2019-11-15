@@ -1,80 +1,95 @@
 ﻿<!doctype html>
 <html lang="de">
-   <head>
-      <meta charset="utf-8">
-      <title>Projekt</title>
-      <style>
-         h1 {
-         font-family: arial, sans-serif;
-         text-align: center;
-         padding: 1em;
-         border: 3px solid black;
-         background-color: #E0E0E0;
-         display: inline-block;
-         }
-         .text_schwarz {
-         font-family: arial, sans-serif;
-         font-size: 12pt;
-         font-weight: normal;
-         color: black;
-         }
+
+<head>
+	<meta charset="utf-8">
+	<title>Projekt</title>
+	<style>
+		h1 {
+			font-family: arial, sans-serif;
+			text-align: center;
+			padding: 1em;
+			border: 3px solid black;
+			background-color: #E0E0E0;
+			display: inline-block;
+		}
+
+		.text_schwarz {
+			font-family: arial, sans-serif;
+			font-size: 12pt;
+			font-weight: normal;
+			color: black;
+		}
+
+		td {
+			font-family: arial, sans-serif;
+			font-size: 16pt;
+			font-weight: normal;
+			color: black;
+		}
+
+		a {
+			font-family: arial, sans-serif;
+			font-size: 16pt;
+			font-weight: normal;
+			color: black;
+		}
+
 		.di {
-		 background-color: rgb(243, 247, 129);
-		 width: 50px;
-		 }
+			font-family: arial, sans-serif;
+			background-color: rgb(243, 247, 129);
+		}
+
 		.dq {
-		 background-color: rgb(169, 245, 225);
-		 width: 80px;
+			font-family: arial, sans-serif;
+			background-color: rgb(169, 245, 225);
 		}
+
 		.ai {
-		 background-color: rgb(201, 42, 172);
-		 width: 50px;
-		 }
-		.aq {
-		 background-color: rgb(42, 201, 201);
-		 width: 80px;
+			font-family: arial, sans-serif;
+			background-color: rgb(201, 42, 172);
 		}
-      </style>
-   </head>
-   <body>
-      <h1>Beckhoff SPS + Analogwerte (ST)  </h1>
-		<br>
-		
-		<table>
-			<tr>
-				<td style="vertical-align: top;">	  
-					<img width="300px" src="https://www.linderonline.at/medien/image/lbs/lau/s7_1200_regelungstechnik/fuehrungsgroessengeber.jpg" /> 
-				</td>
-				<td style="vertical-align: top;">
-				
-				  <span class="text_schwarz">
-					 <table border="1" cellpadding="5">
-						<tr class="variablentabelle">
-						   <td>Bezeichnung			</td>
-						   <td>Kommentar</td>
-						</tr>					   
-						<tr class="ai">
-						   <td>AN.AI_1					</td>
-						   <td>Analogeingang 0 (0..10V)	</td>
-						</tr>
-						<tr class="ai">
-						   <td>AN.AI_2					</td>
-						   <td>Analogeingang 1 (0..10V)	</td>
-						</tr>
-						<tr class="ai">
-						   <td>AN.AQ_1					</td>
-						   <td>Analogausgang 0 (0..10V)	</td>
-						</tr>
-						<tr class="aq">
-						  <td>AN.AQ_2					</td>
-						   <td>Analogausgang 1 (0..10V)	</td>
-						</tr>
-					</table>
-				  </span>
-			</td>
-			</tr>
-		</table>
-		
-      <br><br>
-   </body>
-</html>	  
+
+		.aq {
+			font-family: arial, sans-serif;
+			background-color: rgb(42, 201, 201);
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Beckhoff SPS + Analogwerte (ST) </h1>
+	<br><br>
+
+	<img width="300px"
+		src="https://www.linderonline.at/medien/image/lbs/lau/s7_1200_regelungstechnik/fuehrungsgroessengeber.jpg" />
+
+	<br><br>
+
+	<table border="1" cellpadding="5">
+		<tr class="variablentabelle">
+			<td>Bezeichnung </td>
+			<td>Kommentar</td>
+		</tr>
+		<tr class="ai">
+			<td>AN.AI_1 </td>
+			<td>Analogeingang 0 (0..10V) </td>
+		</tr>
+		<tr class="ai">
+			<td>AN.AI_2 </td>
+			<td>Analogeingang 1 (0..10V) </td>
+		</tr>
+		<tr class="ai">
+			<td>AN.AQ_1 </td>
+			<td>Analogausgang 0 (0..10V) </td>
+		</tr>
+		<tr class="aq">
+			<td>AN.AQ_2 </td>
+			<td>Analogausgang 1 (0..10V) </td>
+		</tr>
+	</table>
+
+	<br><br>
+</body>
+
+</html>
