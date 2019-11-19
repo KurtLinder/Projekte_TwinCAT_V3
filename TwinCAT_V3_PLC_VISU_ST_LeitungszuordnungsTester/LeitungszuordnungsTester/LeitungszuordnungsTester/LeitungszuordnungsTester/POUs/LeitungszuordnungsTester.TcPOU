@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="LeitungszuordnungsTester" Id="{06128066-71dd-42f8-af82-918a0e997a69}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK LeitungszuordnungsTester
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF dio.DI_1 THEN
+	Visu.Ader_1:=TRUE;
+ELSE 
+	Visu.Ader_1 := FALSE;
+END_IF
+
+IF dio.DI_2 THEN
+	Visu.Ader_2:=TRUE;
+ELSE 
+	Visu.Ader_2 := FALSE;
+END_IF
+
+IF dio.DI_3 THEN
+	Visu.Ader_3:=TRUE;
+	ELSE 
+	Visu.Ader_3 := FALSE;
+END_IF
+
+IF dio.DI_4 THEN
+	Visu.Ader_4:=TRUE;	
+	ELSE 
+	Visu.Ader_4 := FALSE;
+END_IF
+
+IF dio.DI_5 THEN
+	Visu.Ader_5:=TRUE;
+	ELSE 
+	Visu.Ader_5 := FALSE;
+END_IF
+
+IF dio.DI_6 THEN
+	Visu.Ader_6:=TRUE;
+	ELSE 
+	Visu.Ader_6 := FALSE;
+END_IF
+
+IF dio.DI_7 THEN
+	Visu.Ader_7:=TRUE;
+	ELSE 
+	Visu.Ader_7 := FALSE;
+END_IF
+
+IF dio.DI_8 THEN
+	Visu.Ader_8:=TRUE;
+	ELSE 
+	Visu.Ader_8 := FALSE;
+END_IF
+
+
+
+IF dio.DI_10 THEN
+	Visu.AderErkennen:=TRUE;
+	ELSE 
+	Visu.AderErkennen := FALSE;
+END_IF
+
+IF dio.DI_11 THEN
+	Visu.NichtVerbunden:=TRUE;
+	ELSE 
+	Visu.NichtVerbunden := FALSE;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="LeitungszuordnungsTester">
+      <LineId Id="24" Count="1" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="27" Count="2" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="31" Count="2" />
+      <LineId Id="60" Count="1" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="35" Count="2" />
+      <LineId Id="62" Count="1" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="39" Count="2" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="43" Count="2" />
+      <LineId Id="65" Count="1" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="47" Count="2" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="51" Count="2" />
+      <LineId Id="70" Count="1" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="21" Count="2" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="2" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

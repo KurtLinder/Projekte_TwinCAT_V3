@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <GlobalTextList Name="GlobalTextList" Id="{f0287eb4-d25a-4642-b906-58f5c26e567c}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="GlobalTextListObject">
+          <l n="TextList" t="ArrayList" cet="TextListRow">
+            <o>
+              <v n="TextID">"164"</v>
+              <v n="TextDefault">"Ader 1 (DQ1)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"763"</v>
+              <v n="TextDefault">"Ader 2 (DQ2)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"940"</v>
+              <v n="TextDefault">"Ader 3 (DQ3)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"714"</v>
+              <v n="TextDefault">"Ader 4 (DQ4)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"22"</v>
+              <v n="TextDefault">"Ader 5 (DQ5)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"514"</v>
+              <v n="TextDefault">"Ader 6 (DQ6)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"344"</v>
+              <v n="TextDefault">"Ader 7 (DQ7)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"278"</v>
+              <v n="TextDefault">"Ader 8 (DQ8)"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"648"</v>
+              <v n="TextDefault">"Ader erkennen ..."</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"921"</v>
+              <v n="TextDefault">"Die zu testende Leitung mit dem Eingang DI1 verbinden"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"394"</v>
+              <v n="TextDefault">"Leitungszuordnungstester"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"233"</v>
+              <v n="TextDefault">"Nicht verbunden"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+          </l>
+          <l n="Languages" t="ArrayList" />
+          <v n="GuidInit">{50a37dc0-1550-4cfb-aaf2-d4d51dbb01f0}</v>
+          <v n="GuidReInit">{0dcab851-bb2f-498a-a733-07e3c655acf5}</v>
+          <v n="GuidExitX">{37a22295-0e6c-401c-9980-a5837e378089}</v>
+        </o>
+      </Data>
+      <TypeList>
+        <Type n="ArrayList">System.Collections.ArrayList</Type>
+        <Type n="GlobalTextListObject">{63784cbb-9ba0-45e6-9d69-babf3f040511}</Type>
+        <Type n="Guid">System.Guid</Type>
+        <Type n="String">System.String</Type>
+        <Type n="TextListRow">{53da1be7-ad25-47c3-b0e8-e26286dad2e0}</Type>
+      </TypeList>
+    </XmlArchive>
+  </GlobalTextList>
+</TcPlcObject>
