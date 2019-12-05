@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="Tiefgarage" Id="{1b8e7ec7-cd2f-4faf-a8ae-b551aae7de3b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Tiefgarage
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Timer: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//MAIN.Auto := 11;
+//MAIN.Personen := 22;
+DIO.DQ_1 := MAIN.B1;
+DIO.DQ_2 := MAIN.B2;
+
+Timer(IN:= NOT Timer.Q, PT:= T#10S );
+]]></ST>
+    </Implementation>
+    <LineIds Name="Tiefgarage">
+      <LineId Id="9" Count="0" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="19" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

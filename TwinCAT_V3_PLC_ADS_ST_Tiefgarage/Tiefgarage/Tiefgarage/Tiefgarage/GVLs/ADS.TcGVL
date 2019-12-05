@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <GVL Name="ADS" Id="{1151171f-0ef3-4d6c-9971-70afc555383b}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+B1: BOOL; 		// Lichtschranke draussen
+B2:	BOOL; 		//Lichtschranke drinnen 
+Auto: BYTE; 	//Anzahl Autos
+Personen: BYTE; // Anzahl Personen
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
