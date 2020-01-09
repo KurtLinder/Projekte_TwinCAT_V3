@@ -1,57 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
   <GVL Name="dSub" Id="{7948aa29-e1c8-4c93-94b5-310d9886c537}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
-VAR_GLOBAL
+VAR_GLOBAL	
+	// ACHTUNG für die Linearachse sind die Ein- und Ausgänge richtig eingetragen!
+	B1 AT %IX1618.0: BOOL; 		// Linearantrieb Endlage links (Öffner)
+	B2 AT %IX1618.1: BOOL;		// Linearantrieb Endlage rechts (Öffner)
+	S2 AT %IX1618.2: BOOL;		// Taster (0) (Öffner)
+	S1 AT %IX1618.3: BOOL;		// Taster (1) (Schliesser)
+	S4 AT %IX1618.4: BOOL;		// Taster II (Schliesser)
+	S3 AT %IX1618.5: BOOL;		// Taster I (Schliesser)
+	S6 AT %IX1618.6: BOOL;		// Taster Pfeil ab (Schliesser)
+	S5 AT %IX1618.7: BOOL;		// Taster Pfeil auf (Schliesser)
+	S8 AT %IX1619.0: BOOL;		// Taster - (Schliesser)
+	S7 AT %IX1619.1: BOOL;		// Taster + (Schliesser)
+	S9 AT %IX1619.2: BOOL;		// Taster STOP (Öffner)	
+	S10 AT %IX1619.3: BOOL;		// Taster Not Halt (Öffner)	
+	S11 AT %IX1619.4: BOOL;		// Taster Not Halt (Schliesser)
+	S12 AT %IX1619.5: BOOL;		//
+	S13 AT %IX1619.6: BOOL;		//
+	S14 AT %IX1619.7: BOOL;		//
 	
-	// Linearantrieb Endlage links (Öffner)
-	B1 AT %I*: BOOL; 
-	// Linearantrieb Endlage rechts (Öffner)
-	B2 AT %I*: BOOL;
-	// Taster (1) (Schliesser)
-	S1 AT %I*: BOOL;	
-	// Taster (0) (Öffner)
-	S2 AT %I*: BOOL;
-	// Taster I (Schliesser)
-	S3 AT %I*: BOOL;
-	// Taster II (Schliesser)
-	S4 AT %I*: BOOL;
-	// Taster Pfeil auf (Schliesser)
-	S5 AT %I*: BOOL;
-	// Taster Pfeil ab (Schliesser)
-	S6 AT %I*: BOOL;
-	// Taster + (Schliesser)
-	S7 AT %I*: BOOL;
-	// Taster - (Schliesser)
-	S8 AT %I*: BOOL;
-	// Taster STOP (Öffner)
-	S9 AT %I*: BOOL;
-	// Taster Not Halt (Öffner)
-	S10 AT %I*: BOOL;
-	// Taster Not Halt (Schliesser)
-	S11 AT %I*: BOOL;
+	Q1 AT %QX1586.0: BOOL;		// Linearantrieb Rechtslauf
+	Q2 AT %QX1586.1: BOOL;		// Linearantrieb Linkslauf
+	P1 AT %QX1586.2: BOOL;		// Meldeleuchte im Taster S1 (weiß)
+	P2 AT %QX1586.3: BOOL;		// Meldeleuchte weiß
+	P3 AT %QX1586.4: BOOL;		// Meldeleuchte rot
+	P4 AT %QX1586.5: BOOL;		// Meldeleuchte grün	
+	P5 AT %QX1586.6: BOOL;		//
+	P6 AT %QX1586.7: BOOL;		//
+	P7 AT %QX1587.0: BOOL;		//
+	P8 AT %QX1587.1: BOOL;		//
+	P9 AT %QX1587.2: BOOL;		//
+	P10 AT %QX1587.3: BOOL;		//
+	P11 AT %QX1587.4: BOOL;		//
+	P12 AT %QX1587.5: BOOL;		//
+	P13 AT %QX1587.6: BOOL;		//
+	P14 AT %QX1587.7: BOOL;		//
 	
-	// Analogeingang 0
-	AI_0 AT %I*: INT;
-	// Analogeingang 1
-	AI_1 AT %I*: INT;	
+	DIB_1_8 AT %IB1618: BYTE;	// Digitale Eingänge 1..8
+	DIB_9_16 AT %IB1619: BYTE;	// Digitale Eingänge 9..16
 	
-	// Linearantrieb Rechtslauf
-	Q1 AT %Q*: BOOL;
-	// Linearantrieb Linkslauf
-	Q2 AT %Q*: BOOL;
-	// Meldeleuchte im Taster S1 (weiß)
-	P1 AT %Q*: BOOL;
-	// Meldeleuchte weiß
-	P2 AT %Q*: BOOL;
-	// Meldeleuchte rot
-	P3 AT %Q*: BOOL;
-	// Meldeleuchte grün
-	P4 AT %Q*: BOOL;
+	DIW_1_16 AT %IW809: WORD;	// Digitale Eingänge 1..16
+	
+	DQB_1_8 AT %QB1586: BYTE;	// Digitale Ausgänge 1..8
+	DQB_9_16 AT %QB1587: BYTE;	// Digitale Ausgänge 9..16
 
-	// Analogausgang 0
-	AQ_0 AT %Q*: INT;
+	DQW_1_16 AT %QW793: WORD;	// Digitale Ausgänge 1..16	
+		
+	AI_0 AT %I*: INT;			// Analogeingang 0
+	AI_1 AT %I*: INT;			// Analogeingang 1
 	
+	AQ_0 AT %Q*: INT;			// Analogausgang 0	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -2791,102 +2791,261 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
+							<Name>dSub.DIB_1_8</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 1..8]]>
+							</Comment>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>dSub.DIW_1_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 1..16]]>
+							</Comment>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
 							<Name>dSub.B1</Name>
 							<Comment>
 								<![CDATA[ Linearantrieb Endlage links (Öffner)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.B2</Name>
 							<Comment>
 								<![CDATA[ Linearantrieb Endlage rechts (Öffner)]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>dSub.S1</Name>
-							<Comment>
-								<![CDATA[ Taster (1) (Schliesser)]]>
-							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S2</Name>
 							<Comment>
 								<![CDATA[ Taster (0) (Öffner)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>dSub.S3</Name>
+							<Name>dSub.S1</Name>
 							<Comment>
-								<![CDATA[ Taster I (Schliesser)]]>
+								<![CDATA[ Taster (1) (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S4</Name>
 							<Comment>
 								<![CDATA[ Taster II (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>dSub.S5</Name>
+							<Name>dSub.S3</Name>
 							<Comment>
-								<![CDATA[ Taster Pfeil auf (Schliesser)]]>
+								<![CDATA[ Taster I (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S6</Name>
 							<Comment>
 								<![CDATA[ Taster Pfeil ab (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>dSub.S7</Name>
+							<Name>dSub.S5</Name>
 							<Comment>
-								<![CDATA[ Taster + (Schliesser)]]>
+								<![CDATA[ Taster Pfeil auf (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.DIB_9_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 9..16]]>
+							</Comment>
+							<Type>BYTE</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S8</Name>
 							<Comment>
 								<![CDATA[ Taster - (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.S7</Name>
+							<Comment>
+								<![CDATA[ Taster + (Schliesser)]]>
+							</Comment>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S9</Name>
 							<Comment>
-								<![CDATA[ Taster STOP (Öffner)]]>
+								<![CDATA[ Taster STOP (Öffner)	]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S10</Name>
 							<Comment>
-								<![CDATA[ Taster Not Halt (Öffner)]]>
+								<![CDATA[ Taster Not Halt (Öffner)	]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.S11</Name>
 							<Comment>
 								<![CDATA[ Taster Not Halt (Schliesser)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.S12</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.S13</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.S14</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DIB_1_8</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 1..8]]>
+							</Comment>
+							<Type>BYTE</Type>
 						</Var>
 						<Var>
 							<Name>DIO.DI_1</Name>
 							<Comment>
-								<![CDATA[ Digitaler Eingang 1]]>
+								<![CDATA[ Digitaler Eingang 1	]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DIW_1_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 1..16]]>
+							</Comment>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_2</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 2	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_3</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 3	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_4</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 4		]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_5</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 5	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_6</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 6	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_7</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 7	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_8</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 8	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_9</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 9	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DIB_9_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 9..16	]]>
+							</Comment>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_10</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 10		]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_11</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 11	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_12</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 12			]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_13</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 13	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_14</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 14	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_15</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 15	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_16</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 16	]]>
+							</Comment>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>AN.AI_1</Name>
@@ -2898,114 +3057,9 @@ External Setpoint Generation:
 						<Var>
 							<Name>AN.AI_2</Name>
 							<Comment>
-								<![CDATA[ Analogeingang AI 2	]]>
+								<![CDATA[ Analogeingang AI 2		]]>
 							</Comment>
 							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_2</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 2]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_3</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 3]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_4</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 4]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_5</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 5]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_6</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 6]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_7</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 7]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_8</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 8]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_9</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 9]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_10</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 10]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_11</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 11]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_12</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 12]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_13</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 13]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_14</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 14]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_15</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 15]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DI_16</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 16]]>
-							</Comment>
-							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>dSub.AI_0</Name>
@@ -3029,47 +3083,241 @@ External Setpoint Generation:
 							<Comment>
 								<![CDATA[ Linearantrieb Rechtslauf]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.DQB_1_8</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 1..8]]>
+							</Comment>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>dSub.DQW_1_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 1..16	]]>
+							</Comment>
+							<Type>WORD</Type>
 						</Var>
 						<Var>
 							<Name>dSub.Q2</Name>
 							<Comment>
 								<![CDATA[ Linearantrieb Linkslauf]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P1</Name>
 							<Comment>
 								<![CDATA[ Meldeleuchte im Taster S1 (weiß)]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P2</Name>
 							<Comment>
 								<![CDATA[ Meldeleuchte weiß]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P3</Name>
 							<Comment>
 								<![CDATA[ Meldeleuchte rot]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P4</Name>
 							<Comment>
-								<![CDATA[ Meldeleuchte grün]]>
+								<![CDATA[ Meldeleuchte grün	]]>
 							</Comment>
-							<Type>BOOL</Type>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P5</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P6</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.DQB_9_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 9..16]]>
+							</Comment>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P7</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P8</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P9</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P10</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P11</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P12</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P13</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>dSub.P14</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQB_1_8</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 1..8]]>
+							</Comment>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQW_1_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 1..16]]>
+							</Comment>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_1</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 1	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_2</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 2	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_3</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 3	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_4</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 4	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_5</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 5	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_6</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 6	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_7</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 7	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_8</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 8	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQB_9_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 9..16]]>
+							</Comment>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_9</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 9	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_10</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 10	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_11</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 11	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_12</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 12		]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_13</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 13	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_14</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 14	 	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_15</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 15	]]>
+							</Comment>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQ_16</Name>
+							<Comment>
+								<![CDATA[ Digitaler Ausgang 16	]]>
+							</Comment>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>AN.AQ_1</Name>
 							<Comment>
-								<![CDATA[ Analogausgang AQ 1	]]>
+								<![CDATA[ Analogausgang AQ 1	 ]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
@@ -3081,121 +3329,9 @@ External Setpoint Generation:
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>DIO.DQ_1</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 1]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_2</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 2]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_3</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 3]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_4</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 4]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_5</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 5]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_6</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 6]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_7</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 7]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_8</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 8]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_9</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 9]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_10</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 10]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_11</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 11]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_12</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 12]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_13</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 13]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_14</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 14]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_15</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 15]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>DIO.DQ_16</Name>
-							<Comment>
-								<![CDATA[ Digitaler Ausgang 16]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>dSub.AQ_0</Name>
 							<Comment>
-								<![CDATA[ Analogausgang 0]]>
+								<![CDATA[ Analogausgang 0	]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
@@ -5912,6 +6048,9 @@ Bit 8 - 15 : reserved]]>
 				<Link VarA="PlcTask Inputs^dSub.S1" VarB="Channel 4^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.S10" VarB="Channel 12^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.S11" VarB="Channel 13^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S12" VarB="Channel 14^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S13" VarB="Channel 15^Input"/>
+				<Link VarA="PlcTask Inputs^dSub.S14" VarB="Channel 16^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.S2" VarB="Channel 3^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.S3" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^dSub.S4" VarB="Channel 5^Input"/>
@@ -5941,9 +6080,19 @@ Bit 8 - 15 : reserved]]>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2809)">
 				<Link VarA="PlcTask Outputs^dSub.P1" VarB="Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P10" VarB="Channel 12^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P11" VarB="Channel 13^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P12" VarB="Channel 14^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P13" VarB="Channel 15^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P14" VarB="Channel 16^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.P2" VarB="Channel 4^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.P3" VarB="Channel 5^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.P4" VarB="Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P5" VarB="Channel 7^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P6" VarB="Channel 8^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P7" VarB="Channel 9^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P8" VarB="Channel 10^Output"/>
+				<Link VarA="PlcTask Outputs^dSub.P9" VarB="Channel 11^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.Q1" VarB="Channel 1^Output"/>
 				<Link VarA="PlcTask Outputs^dSub.Q2" VarB="Channel 2^Output"/>
 			</OwnerB>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="Lauflicht" Id="{7d16aa3e-6cbd-4e56-bda6-1c5f2746b937}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Lauflicht
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Blinker: TON;
+	Zaehler : WORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Blinker(IN:= NOT Blinker.Q, PT:= T#100MS );
+
+IF Blinker.Q THEN	Zaehler := Zaehler + 1;END_IF
+IF Zaehler > 15 THEN Zaehler := 0;END_IF
+
+DIO.DQW_1_16 := SHL(1 ,Zaehler);
+]]></ST>
+    </Implementation>
+    <LineIds Name="Lauflicht">
+      <LineId Id="9" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="23" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
