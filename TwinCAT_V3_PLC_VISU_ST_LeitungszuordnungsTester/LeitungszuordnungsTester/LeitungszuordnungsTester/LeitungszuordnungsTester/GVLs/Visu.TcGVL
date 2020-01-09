@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <GVL Name="Visu" Id="{79ea184b-99d4-48d2-a31a-0eb21cc13114}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+ NichtVerbunden:BOOL;
+ AderErkennen:BOOL;
+ Ader_1:BOOL;
+ Ader_2:BOOL;
+ Ader_3:BOOL;
+ Ader_4:BOOL;
+ Ader_5:BOOL;
+ Ader_6:BOOL;
+ Ader_7:BOOL;
+ Ader_8:BOOL; 
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
