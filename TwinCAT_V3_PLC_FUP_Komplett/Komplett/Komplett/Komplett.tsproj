@@ -2915,13 +2915,6 @@ External Setpoint Generation:
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>DIO.DIB_1_8</Name>
-							<Comment>
-								<![CDATA[ Digitale Eingänge 1..8]]>
-							</Comment>
-							<Type>BYTE</Type>
-						</Var>
-						<Var>
 							<Name>DIO.DI_1</Name>
 							<Comment>
 								<![CDATA[ Digitaler Eingang 1	]]>
@@ -2934,6 +2927,13 @@ External Setpoint Generation:
 								<![CDATA[ Digitale Eingänge 1..16]]>
 							</Comment>
 							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DIB_1_8</Name>
+							<Comment>
+								<![CDATA[ Digitale Eingänge 1..8]]>
+							</Comment>
+							<Type>BYTE</Type>
 						</Var>
 						<Var>
 							<Name>DIO.DI_2</Name>
@@ -2985,18 +2985,18 @@ External Setpoint Generation:
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>DIO.DI_9</Name>
-							<Comment>
-								<![CDATA[ Digitaler Eingang 9	]]>
-							</Comment>
-							<Type>BIT</Type>
-						</Var>
-						<Var>
 							<Name>DIO.DIB_9_16</Name>
 							<Comment>
 								<![CDATA[ Digitale Eingänge 9..16	]]>
 							</Comment>
 							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DI_9</Name>
+							<Comment>
+								<![CDATA[ Digitaler Eingang 9	]]>
+							</Comment>
+							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>DIO.DI_10</Name>
@@ -3143,15 +3143,15 @@ External Setpoint Generation:
 							<Type>BIT</Type>
 						</Var>
 						<Var>
+							<Name>dSub.P7</Name>
+							<Type>BIT</Type>
+						</Var>
+						<Var>
 							<Name>dSub.DQB_9_16</Name>
 							<Comment>
 								<![CDATA[ Digitale Ausgänge 9..16]]>
 							</Comment>
 							<Type>BYTE</Type>
-						</Var>
-						<Var>
-							<Name>dSub.P7</Name>
-							<Type>BIT</Type>
 						</Var>
 						<Var>
 							<Name>dSub.P8</Name>
@@ -3252,18 +3252,18 @@ External Setpoint Generation:
 							<Type>BIT</Type>
 						</Var>
 						<Var>
-							<Name>DIO.DQB_9_16</Name>
-							<Comment>
-								<![CDATA[ Digitale Ausgänge 9..16]]>
-							</Comment>
-							<Type>BYTE</Type>
-						</Var>
-						<Var>
 							<Name>DIO.DQ_9</Name>
 							<Comment>
 								<![CDATA[ Digitaler Ausgang 9	]]>
 							</Comment>
 							<Type>BIT</Type>
+						</Var>
+						<Var>
+							<Name>DIO.DQB_9_16</Name>
+							<Comment>
+								<![CDATA[ Digitale Ausgänge 9..16]]>
+							</Comment>
+							<Type>BYTE</Type>
 						</Var>
 						<Var>
 							<Name>DIO.DQ_10</Name>

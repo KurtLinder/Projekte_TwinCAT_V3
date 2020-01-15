@@ -30,6 +30,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\DoppelLauflicht.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Komplett.TcPOU">
       <SubType>Code</SubType>
     </Compile>

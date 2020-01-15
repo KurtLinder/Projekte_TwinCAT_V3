@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <POU Name="DoppelLauflicht" Id="{97617c5f-98a6-4cfd-b852-d438d6d3173c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DoppelLauflicht
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Blinker: TON;
+	Zaehler : WORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+Blinker(IN:= NOT Blinker.Q, PT:= T#100MS );
+
+IF Blinker.Q THEN	Zaehler := Zaehler + 1;END_IF
+IF Zaehler > 7 THEN Zaehler := 0;END_IF
+
+dSub.DQB_1_8 := SHL(1, Zaehler);
+dSub.DQB_9_16 := SHL(1, 7 - Zaehler);
+]]></ST>
+    </Implementation>
+    <LineIds Name="DoppelLauflicht">
+      <LineId Id="12" Count="5" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

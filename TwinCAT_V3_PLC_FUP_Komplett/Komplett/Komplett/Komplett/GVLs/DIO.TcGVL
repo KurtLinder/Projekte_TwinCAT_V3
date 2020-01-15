@@ -40,11 +40,11 @@ VAR_GLOBAL
 
 	DIB_1_8 AT %IB1620: BYTE;	// Digitale Eingänge 1..8
 	DIB_9_16 AT %IB1621: BYTE;	// Digitale Eingänge 9..16	
-	DIW_1_16 AT %IW810: WORD;	// Digitale Eingänge 1..16
+	DIW_1_16 AT %IB1620: WORD;	// Digitale Eingänge 1..16
 	
 	DQB_1_8 AT %QB1588: BYTE;	// Digitale Ausgänge 1..8
 	DQB_9_16 AT %QB1589: BYTE;	// Digitale Ausgänge 9..16
-	DQW_1_16 AT %QW794: WORD;	// Digitale Ausgänge 1..16
+	DQW_1_16 AT %QB1588: WORD;	// Digitale Ausgänge 1..16
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
